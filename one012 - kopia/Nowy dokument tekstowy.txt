@@ -1,0 +1,15 @@
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:output omit-xml-declaration="yes"/>
+<xsl:preserve-space elements="*"/>
+<xsl:template match="/">
+<xsl:for-each select="ROOT">
+<xsl:apply-templates select="RECORDSET1"/>
+</xsl:for-each>
+</xsl:template>
+<xsl:template match="RECORDSET1">
+<xsl:apply-templates select="RECORD" />
+</xsl:template>
+<xsl:template match="RECORD" >
+<xsl:value-of select="@message" />"
+</xsl:template>
+</xsl:stylesheet>
